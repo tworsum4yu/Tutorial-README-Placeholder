@@ -88,16 +88,17 @@ This section will give some quick details on getting started with the deployment
 > name: *your_deployment_name*
 Sets the name of the deployment workflow. This will be presented within the actions tab in github.
 
-> on:
-> ├── push:
-> │   └── branches: ['main']
+> on: <br>
+> ├── push: <br>
+> │   └── branches: ['main'] <br>
 > └── workfow_dispatch: {}
+
 Tells github that this workflow should be run everytime new code is pushed to the main branch. In addition, the workflow_dispatch line allows the workflow to be run manually in the action tab in the repository.
 
 ![StartOfJobs](./assets/Deploy2.png) <br>
 *Figure 2: Intial Jobs to ensure code is correct*
 
-> jobs:
+> jobs: <br>
 > └── deploy:
 
 The jobs tag tells Github that what follows below are jobs to be run by Github. The deploy tag is just a name assigned to the following tasks, so that it is easier to track what jobs are running during the workflow.
