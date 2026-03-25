@@ -77,8 +77,8 @@ This first *uses* is extremely important as it tells github to pull in the repos
 > name: Node setup<br>
 > ├── uses: actions/setup-node@v4<br>
 > └── with: <br>
->       ├── node-version: 24.13.0 <br>
->       └── cache: npm
+> &nbsp;&nbsp;&nbsp;&nbsp;├── node-version: 24.13.0 <br>
+> &nbsp;&nbsp;&nbsp;&nbsp;└── cache: npm
 
 The above step sets up node so that the GitHub Actions runner (the thing running this workflow) can use Node to run the later steps. The specific node version is specified to keep consistencies between different runs and ***cache: npm*** tells Github to cache the generate *node_modules* folder, ensuring that following runs are faster as no repeated dependencies will be installed.
 
