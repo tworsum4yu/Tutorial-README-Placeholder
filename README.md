@@ -20,18 +20,27 @@ script.js
 - Confirm the site works without any backend dependencies.
 
 ---
-## 2. S3 (Static Hosting)  
-The aim here is to push our static website onto S3 to be stored.
+## 2. Deployment file  
+This section will give some quick details on getting started with the deployment file for the project.
 
 ### Steps  
-- Create a new S3 bucket (name must be globally unique).
-- If hosting directly from S3:
-- Disable “Block all public access”.
-- Enable **Static Website Hosting**.
-- Set `index.html` as the index document.
-- Add a bucket policy allowing public read access.
-- Upload your site files.
-- Test using the bucket’s website endpoint.
+![BeginningStepsOfDeploy](./assets/Deploy1.png)
+
+## S3
+The aim here is to push our static website onto S3 to be stored.
+
+
+### What is S3?
+Amazon S3 (Simple Storage Service) is AWS’s scalable object‑storage service used to store and retrieve any amount of data at any time. Instead of thinking in terms of folders on a server, S3 stores files as objects inside buckets.
+
+##### Key points
+- Object storage — stores files like HTML, CSS, JS, images, videos, logs, backups, etc.
+- Highly durable — designed for 11 nines of durability (99.999999999%).
+- Infinitely scalable — you never run out of space.
+- Pay‑as‑you‑go — you only pay for what you store and transfer.
+- Static website hosting — can serve HTML/CSS/JS directly over the web.
+- Integrates with AWS services — CloudFront, EC2, Lambda, ECR, and more.
+
 
 ---
 
