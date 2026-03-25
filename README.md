@@ -17,12 +17,11 @@ script.js
 
 - Use relative paths for all assets (e.g., `./images/logo.png`).
 - Test locally by opening `index.html` in your browser.
-- Minify CSS/JS if desired.
 - Confirm the site works without any backend dependencies.
 
 ---
-## 2. S3 (Static Hosting or Asset Storage)  
-You can host the static site directly on S3 or use it as an asset bucket for your containerised deployment.
+## 2. S3 (Static Hosting)  
+The aim here is to push our static website onto S3 to be stored.
 
 ### Steps  
 - Create a new S3 bucket (name must be globally unique).
