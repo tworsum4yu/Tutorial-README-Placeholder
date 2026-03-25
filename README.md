@@ -27,15 +27,15 @@ Create a simple project structure:
 This is the file that will run everytime you do a commit to the main branch in your github. 
 
 **What the should happen during deployment:**
-- Upload your static site to S3 <br>
+- **Upload your static site to S3** <br>
 Ensures your latest HTML, CSS, JS, and assets are stored in your S3 bucket for hosting or distribution. <br>
 ***Please look below at S3 for more information***
 
-- Build and push a Docker image to ECR <br>
+- **Build and push a Docker image to ECR** <br>
 Packages your site into a Docker image and stores it in Amazon ECR so EC2 (or other services) can pull and run it.
 ***Please look below at docker and ECR for more information***
 
-- Deploy the site to EC2  <br> 
+- **Deploy the site to EC2**  <br> 
 Connects to your EC2 instance and updates the running application using the latest code or Docker image.
 ***Please look below at EC2 for more information***
 
@@ -50,18 +50,23 @@ Here we are going to learn how to push our source code into S3.
 ***Below is some code that allows you to run checks within your terminal locally.***
 
 ***Setup AWS credentials in local terminal:***
+
 aws configure
 
 ***Test Listing Buckets***
+
 aws s3 ls s3://mthree-peregrine-s3-# *(# represents a number)*
 
 ***Test Uplaod***
+
 aws s3 cp *{YOUR_FILE}* s3://mthree-peregrine-s3-1/
 
 ***Test Download***
+
 aws s3 cp s3://mthree-peregrine-s3-1/*{YOUR_FILE}*
 
 ***Test Delete***
+
 aws s3 rm s3://mthree-peregrine-s3-1/*{YOUR_FILE}*
 
 ---
