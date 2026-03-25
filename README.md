@@ -44,7 +44,7 @@ Connects to your EC2 instance and updates the running application using the late
 ## S3
 Here we are going to learn how to push our source code into S3. 
 
-***IMPORANT: For the S3 step, we will be using the first bucket***
+***IMPORANT: For the S3 step, we will be using the first bucket*** <br>
 ***IMPORANT:*** *The credentials below are necessary for the deployment step.*
 
 ***Below is some code that allows you to run checks within your terminal locally.***
