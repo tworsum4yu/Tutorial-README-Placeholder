@@ -17,20 +17,48 @@ Amazon S3 (Simple Storage Service) is AWS’s scalable object‑storage service 
 - Integrates with AWS services — CloudFront, EC2, Lambda, ECR, and more.
 
 ### What is ECR?
+Amazon ECR (Elastic Container Registry) is AWS’s fully managed Docker container registry. It stores, manages, and version‑controls your container images so they can be pulled by services like EC2, ECS, EKS, or Lambda.
 
 **Key points**
+- Private or public registry for Docker images
+- Integrates seamlessly with AWS IAM for secure access
+- Supports versioning and tagging of images
+- Works directly with Docker CLI (docker push, docker pull)
+- Often used with CI/CD pipelines for automated deployments
+- Highly available and scalable — no registry servers to manage
 
 ### What is Docker?
+Docker is a platform that lets you package applications into containers — lightweight, portable environments that include everything the app needs to run.
 
 **Key points**
+- Containers bundle code + dependencies into a single unit
+- Ensures consistent behavior across machines (“works on my machine” solved)
+- Much lighter than virtual machines
+- Uses Dockerfiles to define how images are built
+- Integrates with registries like Docker Hub and AWS ECR
+- Ideal for microservices, deployments, and reproducible environments
 
 ### What is EC2?
+Amazon EC2 (Elastic Compute Cloud) provides virtual servers in the cloud. You choose the OS, CPU, memory, storage, and networking, and AWS runs the machine for you.
 
 **Key points**
+- Virtual machines you can start, stop, and scale
+- Supports Linux, Windows, and custom AMIs
+- Works well for hosting apps, APIs, containers, and background jobs
+- Integrates with ECR to run Docker containers
+- Security groups act as virtual firewalls
+- You pay only for the compute time you use
 
 ### What is Terraform?
+Terraform is an Infrastructure as Code (IaC) tool that lets you define cloud resources using configuration files instead of clicking around in the AWS console.
 
 **Key points**
+- Declarative language (HCL) describes your infrastructure
+- Supports AWS, Azure, GCP, and many other providers
+- Enables version‑controlled infrastructure
+- terraform plan shows changes before applying
+- terraform apply creates or updates resources
+- Great for reproducible, automated, and team‑friendly cloud setups
 
 ---
 
@@ -54,13 +82,28 @@ Create a simple project structure:
 ## 2. Deployment file  
 This section will give some quick details on getting started with the deployment file for the project.
 
-![BeginningStepsOfDeploy](./assets/Deploy1.png)
+![BeginningStepsOfDeploy](./assets/Deploy1.png) <br>
 *Figure 1: Intial Setup*
 
-- name: *your_deployment_name* - Sets the name of the deployment workflow. This will be presented within the actions tab in github.
-- 
-- 
-- 
+> name: *your_deployment_name*
+Sets the name of the deployment workflow. This will be presented within the actions tab in github.
+
+> on:
+> ├── push:
+> │   └── branches: ['main']
+> └── workfow_dispatch: {}
+Tells github that this workflow should be run everytime new code is pushed to the main branch. In addition, the workflow_dispatch line allows the workflow to be run manually in the action tab in the repository.
+
+![StartOfJobs](./assets/Deploy2.png) <br>
+*Figure 2: Intial Jobs to ensure code is correct*
+
+> jobs:
+> └── deploy:
+
+The jobs tag tells Github that what follows below are jobs to be run by Github. The deploy tag is just a name assigned to the following tasks, so that it is easier to track what jobs are running during the workflow.
+
+
+
 ---
 
 ## 3. Docker Containerisation  
