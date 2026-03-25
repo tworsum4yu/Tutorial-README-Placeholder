@@ -41,7 +41,7 @@ Connects to your EC2 instance and updates the running application using the late
 
 --- 
 
-## S3
+## 3. S3
 Here we are going to learn how to push our source code into S3. 
 
 ***IMPORANT: For the S3 step, we will be using the first bucket*** <br>
@@ -64,12 +64,33 @@ aws s3 rm s3://mthree-peregrine-s3-1/*{YOUR_FILE}*
 
 ---
 
-## Docker
-Here you just need to learn how to containerise your application locally. <br>
-Two things you will need to look into. Dockerfiles and docker-compose.yml 
+## 4. Docker
+This stage is all about learning how to containerise your application locally. You’ll create a Dockerfile that defines how your app is built and run, and optionally use a docker-compose.yml file to manage multi‑container setups. Once you can build and run your container on your machine, you’re ready for the next steps.
 
-## ECR
-After completing the Docker containerisation locally. You need to figure out how to utilise the deployment file you have created to generate a docker image of your code and push it to ECR.
+***Key points***
+- Understand how Dockerfiles work
+- Build and run your application as a container
+- Use Docker Compose if your app needs multiple services (e.g., app + database)
+- Ensure the container works locally before moving on
 
-## EC2
+---
 
+## 5. ECR
+After you’ve successfully containerised your application, the next step is to push that container image to Amazon ECR. Your deployment workflow will build the Docker image automatically and upload it to your ECR repository, making it available for EC2 or any other AWS service that needs to pull it.
+
+***Key points***
+- Build a production‑ready Docker image in your deploy workflow
+- Authenticate with ECR
+- Push the image to your ECR repository
+- Ensure the image is tagged correctly for EC2 to pull
+
+---
+
+## 6. EC2
+Finally, your deployment workflow and Terraform configuration work together to deploy the application to EC2. The EC2 instance pulls the latest Docker image from ECR and runs it, giving you a fully automated deployment pipeline from code → container → cloud.
+
+***Key points***
+- Terraform provisions the EC2 instance and required infrastructure
+- The deploy workflow triggers on commits to main
+- EC2 pulls the latest image from ECR
+- Your application is updated automatically on the server
