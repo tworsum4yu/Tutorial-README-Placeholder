@@ -82,10 +82,17 @@ Create a simple project structure:
 ## 2. Deployment file  
 This section will give some quick details on getting started with the deployment file for the project.
 
+Please find the deploy file used in this tutorial here: https://github.com/tworsum4yu/mthree_website_practice/blob/main/.github/workflows/deploy.yml
+
+Following will be a breakdown on what exactly is going on for clarities sake.
+
+--- 
+
 ![BeginningStepsOfDeploy](./assets/Deploy1.png) <br>
 *Figure 1: Intial Setup*
 
 > name: *your_deployment_name*
+
 Sets the name of the deployment workflow. This will be presented within the actions tab in github.
 
 > on: <br>
@@ -103,6 +110,24 @@ Tells github that this workflow should be run everytime new code is pushed to th
 
 The jobs tag tells Github that what follows below are jobs to be run by Github. The deploy tag is just a name assigned to the following tasks, so that it is easier to track what jobs are running during the workflow.
 
+> runs-on: ubuntu-latest
+
+Simple line that tells Github that the latest version of ubuntu is being used to run the commands in this jobn.
+
+> env: <br>
+> ├── host: ${{ secrets.EC2_HOST }}<br>
+> ├── username: ${{ secrets.EC2_USER }}<br>
+> └── key: ${{ secrets.SSH_KEY }}
+
+These are environmental variables. This means variables that are live and accessible throughout the jobs runtime. 
+
+These variables look at the values stored in the labelled secrets in the repository and essentially assign the value to the environment variable. If the secret doesn't exist, then this returns null.
+
+> steps: <br>
+> └── uses: actions/checkout@v4
+
+*Steps* tells github the different steps to follow.
+This first *uses* is extremely important as it tells github to pull in the repositories code for use during the workflow. Without this line, Github would be operating on nothing.
 
 
 ---
