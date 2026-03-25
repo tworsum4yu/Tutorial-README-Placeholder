@@ -41,9 +41,9 @@ A lightweight static site is all you need for this deployment.
 
 **Steps**  
 Create a simple project structure:
-> /site
-> ├── index.html
-> ├── styles.css
+> /site <br>
+> ├── index.html <br>
+> ├── styles.css <br>
 > └── script.js
 
 - Use relative paths for all assets (e.g., `./images/logo.png`).
