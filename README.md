@@ -45,28 +45,21 @@ Connects to your EC2 instance and updates the running application using the late
 Here we are going to learn how to push our source code into S3. 
 
 ***IMPORANT: For the S3 step, we will be using the first bucket*** <br>
-***IMPORANT:*** *The credentials below are necessary for the deployment step.*
+***IMPORANT:*** *The credentials sent are necessary for the deployment step.*
 
-***Below is some code that allows you to run checks within your terminal locally.***
-
-***Setup AWS credentials in local terminal:***
-
+***Setup AWS credentials in local terminal:***<br>
 aws configure
 
-***Test Listing Buckets***
-
+***Test Listing Buckets***<br>
 aws s3 ls s3://mthree-peregrine-s3-# *(# represents a number)*
 
-***Test Uplaod***
-
+***Test Uplaod***<br>
 aws s3 cp *{YOUR_FILE}* s3://mthree-peregrine-s3-1/
 
-***Test Download***
-
+***Test Download***<br>
 aws s3 cp s3://mthree-peregrine-s3-1/*{YOUR_FILE}*
 
-***Test Delete***
-
+***Test Delete***<br>
 aws s3 rm s3://mthree-peregrine-s3-1/*{YOUR_FILE}*
 
 ---
