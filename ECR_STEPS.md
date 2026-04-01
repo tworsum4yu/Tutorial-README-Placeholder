@@ -80,7 +80,7 @@ Tells docker to sign into ECR using AWS as its username (for ECR the username wi
 
 Above details where in AWS docker can find the repository where you want to store your image. {ACCOUNT_ID} is the account id you used to create the repository and {AWS_REGION} is the region used when creating the repository.
 
-> IMAGE_SHA="{REGISTRY}/{REPO_NAME}:{SHA}"
+> IMAGE_SHA="{REGISTRY}/{REPO_NAME}:{SHA}" <br>
 > IMAGE_LATEST="{REGISTRY}/{REPO_NAME}:latest"
 
 Examples of the images that you would build. <br>
@@ -91,7 +91,7 @@ Examples of the images that you would build. <br>
 
 Builds the images you have defined.
 
-> docker push "{IMAGE_SHA}"
+> docker push "{IMAGE_SHA}"  <br>
 > docker push "{IMAGE_LATEST}"
 
 Pushes your imagesinto the ECR repository.
