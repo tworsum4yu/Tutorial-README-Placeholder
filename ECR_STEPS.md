@@ -15,6 +15,8 @@ Lists the account information that you are signed into.
 
 This line retrieves the "Account" value from the returned data and outputs it to text. Useful within the deploy to get account info without hard coding.
 
+---
+
 ## See existing repositories and images
 
 > aws ecr describe-repositories
