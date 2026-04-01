@@ -1,6 +1,8 @@
 # ECR Commands
 Below are some ECR commands and what they do. Useful fo the ECR step
 
+---
+
 ## Credentials
 
 > aws configure list
@@ -31,6 +33,8 @@ List the docker image IDs of the docker images that have been pushed to a specif
 
 Does the same as list-images but gives more detail.
 
+---
+
 ## Create new repository
 
 > aws ecr create-repository --repository-name {REPOSITORY_NAME}
@@ -40,6 +44,8 @@ Creates a new repository in ECR with the name that you give it in {REPOSITORY_NA
 > aws ecr describe-repositories --repository-names {YOUR_REPOSITORY_NAME} || aws ecr create-repository --repository-name {YOUR_REPOSITORY_NAME}
 
 Trys to describe the repositories with the name you give it and if it does note exist, it creates it.
+
+---
 
 ## Docker signin
 
