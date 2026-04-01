@@ -84,7 +84,7 @@ Above details where in AWS docker can find the repository where you want to stor
 > IMAGE_LATEST="{REGISTRY}/{REPO_NAME}:latest"
 
 Examples of the images that you would build. <br>
-LATEST represents the latest version and SHA represents a previous version that can be rollbacked to in case issues occur with the latest. <br>
+**LATEST** represents the latest version and **SHA** represents a previous version that can be rollbacked to in case issues occur with the latest. <br>
 {REPO_NAME} represents the name you gave to the repository you created. {SHA} in this case is the github.SJA value for the last deploy workflow.
 
 > docker build -t "{IMAGE_SHA}" -t "{IMAGE_LATEST}" .
