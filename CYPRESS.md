@@ -57,9 +57,57 @@ One cool thing about Cypress is that you can run your tests on different browser
 
 Once you select your browser, cypress opens up a test environment in the browser you selected and leaves you to run the tests that you want.
 
-![Cypress Browser Test Window](./assets/Cypress2.png) <br>
+![Cypress Browser Test Window](./assets/Cypress3.png) <br>
 
+Now that you are here, all you got to do is write some tests and let cypress run them.
 
+---
 
+## Helpful code
 
+Below are some notes that may help you with writing your testing code. This is just some real basic things for ideas. As a reference, you can find a link to my cypress branch for my project below.
 
+***My cypress:*** *https://github.com/tworsum4yu/mthree_website_practice/blob/cypress/cypress/e2e/quiz-tests/quiz-app-tests.cy.js*
+
+> example.cy.js
+
+All you testing files in cypress end with *'cy.js'*.
+
+> describe('*name*', () => {*your_code*})
+> context('*name*', () => {*your_code*})
+
+Both *describe* and *context* are used to group your tests together. *Describe* is typically used to group tests by function whereas *context* is used to group by specific scenarios. For cypress though, the do the exact same thing.
+
+> it('*name*', () => {*your_code*})
+
+*It* is what tells cypress that this is an individual test case you are looking to run.
+
+> cy.visit('*url*')
+
+Tells cypress to visit the url you have stated.
+
+> cy.get('*tag_name*')
+
+Tells cypress to find the elements on the page that match the *tag_name* such as; cy.get('h1') will retrieve all h1 elements on the page.
+
+> cy.log('*log_message*')
+
+Console log for cypress
+
+> cy.window()
+
+Captures the information that is currently held in the window. Useful if you have things to test in localStorage.
+
+### Random final note
+
+Cypress does not inherintly have a way to import files for you, so you are going to have to install the *'cypress-upload-file'* dependency and import it for use through the '*command.js*' file in *support*.
+
+> import 'cypress-file-upload';
+
+For '*command.js*'
+
+> npm install --save-dev cypress-file-upload
+
+Dependency download <br>
+
+There are a bunch of these out and about so take a look to see what you can use to make your tests better.
