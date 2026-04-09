@@ -28,4 +28,4 @@ Simple command that installs cypress into your project as a developer dependency
 
 Runs cypress and opens up an application window. Reference below
 
-(./assets/Cypress1.png)
+![Cypress App Window](./assets/Cypress1.png) <br>
