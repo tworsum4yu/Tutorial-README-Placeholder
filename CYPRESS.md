@@ -34,12 +34,32 @@ Runs cypress and opens up an application window that looks like below.
 
 From here, you will need to click on E2E testing. This will generate the folder structure that cypress will read your tests from. The file structure will look something like below.
 
-> cypress
-> > e2e <br>
-> > fixtures <br>
-> > support
+***FYI:*** *Component testing are for frameworks and libraries that use components, such as; AngularJS and React. We haven't use frameworks or libraries in this mini hussle so you can ignore it.*
 
-The e2e directory is where cypress will read your tests from, so that is the directory you need to store all your tests. If it doesn't create this on startup, you can just add it. <br>
+> cypress <br>
+> ├── e2e <br>
+> ├── fixtures <br>
+> └── support
+
+The ***e2e*** folder is where cypress will read your tests from, so that is the folder you need to store all your tests. If it doesn't create this on startup, you can just add it. <br>
+
+***Fixtures*** is where you need to put any of your required assets that cypress needs to either interact with or test the application. <br>
+
+The ***support*** folder contains any shared commands or imports that all your tests will need. For example; if you need to fill out a form for all your tests, you can create a command in the *'command.js'* file within support and call that command whenever you need to fill out the form. <br>
+
+Once you have verified the folders are there, some examples will appear in the app but you can ignore those. Now brace yourself as what follows is the hardest step of this guide... <br>
+
+Picking a browser to run your tests.
+
+![Cypress Browser Selection Window](./assets/Cypress2.png) <br>
+
+One cool thing about Cypress is that you can run your tests on different browsers to ensure that your application functions correctly no matter the browser the user runs it on. I believe that the list above represents the supported browsers that are downloaded on your device, but I digress if that isn't completely accurate. <br>
+
+Once you select your browser, cypress opens up a test environment in the browser you selected and leaves you to run the tests that you want.
+
+![Cypress Browser Test Window](./assets/Cypress2.png) <br>
+
+
 
 
 
