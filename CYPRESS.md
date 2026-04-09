@@ -35,8 +35,8 @@ Runs cypress and opens up an application window that looks like below.
 From here, you will need to click on E2E testing. This will generate the folder structure that cypress will read your tests from. The file structure will look something like below.
 
 > cypress
-> > e2e
-> > fixtures
+> > e2e <br>
+> > fixtures <br>
 > > support
 
 The e2e directory is where cypress will read your tests from, so that is the directory you need to store all your tests. If it doesn't create this on startup, you can just add it. <br>
