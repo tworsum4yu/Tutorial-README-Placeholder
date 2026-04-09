@@ -22,10 +22,24 @@ Getting ready with cypress is real simple. All you got to do is install the npm 
 
 > npm install cypress --save-dev
 
-Simple command that installs cypress into your project as a developer dependency.
+Above is the command you can use to install the cypress dependency. <br>
+
+Following, you will need to run the so that you can get the files you need to start working with cypress.
 
 > npx cypress open
 
-Runs cypress and opens up an application window. Reference below
+Runs cypress and opens up an application window that looks like below.
 
 ![Cypress App Window](./assets/Cypress1.png) <br>
+
+From here, you will need to click on E2E testing. This will generate the folder structure that cypress will read your tests from. The file structure will look something like below.
+
+> cypress
+> > e2e
+> > fixtures
+> > support
+
+The e2e directory is where cypress will read your tests from, so that is the directory you need to store all your tests. If it doesn't create this on startup, you can just add it. <br>
+
+
+
