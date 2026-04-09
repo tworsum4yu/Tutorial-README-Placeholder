@@ -1,6 +1,6 @@
 # Cypress Introduction
 
-***FYI:*** *Everything in this doc will be a basic cover for some of the stuff I used whilst using cypress, so it won't give the full image of what cypress can do. Please find below a link to the docs if you are interested on more information.*
+***FYI:*** *Everything in this markdown will be a basic cover for some of the stuff I used whilst using cypress, so it won't give the full image of what cypress can do. Please find below a link to the docs if you are interested on more information.*
 
 ***Cypress docs:*** *https://docs.cypress.io/app/get-started/why-cypress*
 
