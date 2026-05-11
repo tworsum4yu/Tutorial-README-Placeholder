@@ -1,4 +1,4 @@
-# Cloudfront Details
+# Cloudwatch Details
 
 ***FYI:*** *Please remove the '' around the '>' in the final steps of the commands. Doesn't display properly if I don't include it. Also had to convert these from powershell to bash so I am not sure if they run correctly.*
 
