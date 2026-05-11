@@ -10,15 +10,15 @@
 > └── support
 
 > aws cloudwatch get-metric-statistics `<br>                                               
-> ├── namespace AWS/S3 `<br>
-> ├── --metric-name AllRequests ` <br>
-> ├── --dimensions Name=BucketName,Value=mthree-peregrine-s3-1 Name=FilterId,Value=entireBucket ` <br>
-> ├── --start-time (Get-Date).AddDays(-7).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ") ` <br>
-> ├── --end-time (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ") ` <br>
-> ├── --period 420 ` <br>
-> ├── --statistics Sum ` <br>
-> ├── --output json ` <br>
-> └── > metrics.json                                  
+>    --namespace AWS/S3 `<br>
+>    --metric-name AllRequests ` <br>
+>    --dimensions Name=BucketName,Value=mthree-peregrine-s3-1 Name=FilterId,Value=entireBucket ` <br>
+>    --start-time (Get-Date).AddDays(-7).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ") ` <br>
+>    --end-time (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ") ` <br>
+>    --period 420 ` <br>
+>    --statistics Sum ` <br>
+>    --output json ` <br>
+>    > metrics.json                                  
 
 Above command gets all requests to the s3 bucket over the last week and sums them together by day. The results are outputted to a metrics.json file to be used else where. Will show later.
 
