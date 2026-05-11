@@ -9,7 +9,7 @@
 > ├── fixtures <br>
 > └── support
 
-> aws cloudwatch get-metric-statistics `<br>                                               
+> aws cloudwatch get-metric-statistics <br>                                               
 >    --namespace AWS/S3 `<br>
 >    --metric-name AllRequests ` <br>
 >    --dimensions Name=BucketName,Value=mthree-peregrine-s3-1 Name=FilterId,Value=entireBucket ` <br>
