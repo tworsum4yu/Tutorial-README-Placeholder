@@ -1,13 +1,8 @@
 # Cloudfront Details
 
-***FYI:*** *All the commands in this doc are for powershell. You will need to convert the commands if using any other operating system that isn't windows, because windows is special.*
+***FYI:*** *Please remove the '' around the '>' in the final steps of the commands. Doesn't display properly if I don't include it. Also had to convert these from powershell to bash so I am not sure if they run correctly.*
 
 # Commands used
-
-> cypress <br>
-> ├── e2e <br>
-> ├── fixtures <br>
-> └── support
 
 > aws cloudwatch get-metric-statistics \
 >  --namespace AWS/S3 \
@@ -18,27 +13,16 @@
 >  --period 420 \
 >  --statistics Sum \
 >  --output json \
->  '>' metrics.json
-
-> aws cloudwatch get-metric-statistics `                                             
->    --namespace AWS/S3 `
->    --metric-name AllRequests `
->    --dimensions Name=BucketName,Value=mthree-peregrine-s3-1 Name=FilterId,Value=entireBucket `
->    --start-time (Get-Date).AddDays(-7).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ") `
->    --end-time (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ") `
->    --period 420 `
->    --statistics Sum `
->    --output json `
->    > metrics.json                                  
+>  '>' metrics.json                             
 
 Above command gets all requests to the s3 bucket over the last week and sums them together by day. The results are outputted to a metrics.json file to be used else where. Will show later.
 
-> aws cloudwatch get-metric-data `
->>   --start-time (Get-Date).AddDays(-7).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ") `
->>   --end-time (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ") `
->>   --region us-east-1 `
->>   --metric-data-queries file://metrics_pull_requests.json `
->>   > metrics_requests.json                                
+> aws cloudwatch get-metric-data \
+>  --start-time "$(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ)" \
+>  --end-time "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+>  --region us-east-1 \
+>  --metric-data-queries file://metrics_pull_requests.json \
+>  '>' metrics_requests.json                              
                        
 Above does the same thing as the previous one, but instead of just getting the AllRequest metrics, it has the ability to get multiple metrics at once, based on the json file provided. Image of the json file 'metrics_pull_requests.json' given below for reference.
 
